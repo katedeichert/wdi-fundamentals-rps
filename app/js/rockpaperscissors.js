@@ -40,15 +40,55 @@ function getWinner(playerMove,computerMove) {
     // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
-    /* YOUR CODE HERE */
+    
+    if (playerMove === computerMove)	{
+    	return "Tie Game"
+    }
+    else if (playerMove === 'rock' && computerMove === 'scissors')   {
+   	 if (playerMove === 'scissors' && computerMove === 'paper')	{
+   		return winner;
+   	}
+   	else if (playerMove == 'paper' && computerMove == 'rock');
+   	{
+
+   	}
     return winner;
-}
+   	}
+   	return "all other scenarious as computer win";
+
+    }
+
 
 function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
-    /* YOUR CODE HERE */
+    +    do {
+ +         console.log('player wins = ' + playerWins + '; computer wins = ' + computerWins);
+ +        
+ +        var userInput = getInput();
+ +        var playerMove = getPlayerMove(userInput);
+ +        var computerMove = getComputerMove(randomPlay());
+ +        var winner = getWinner(playerMove, computerMove);
+ +        
+ +        if(winner === 'player') {
+ +            playerWins++;
+ +        } else if(winner === 'computer') {
+ +            computerWins++;
+ +        }
+ +        
+ +    } while(playerWins < numtimes && computerWins < numtimes);
+ +    
+ +    console.log('Game Finished!!!');
+ +    
+ +    if(playerWins > computerWins) {
+ +        console.log('You have won!!');
+ +    } else {
+ +        console.log('You have lost!!');
+ +    }
+      return [playerWins, computerWins];              return [playerWins, computerWins];
+  }       }
+
     return [playerWins, computerWins];
 }
